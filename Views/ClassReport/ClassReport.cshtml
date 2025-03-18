@@ -1,0 +1,38 @@
+@{
+    ViewData["Title"] = "Class Registration Report";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <h4>Class Registration Report</h4>
+
+    @if (ViewBag.ReportData != null && ViewBag.ReportData.Count > 0)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Teacher Name</th>
+                    <th>Registrations</th>
+                    <th>Number Paid</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var row in ViewBag.ReportData)
+                {
+                    <tr>
+                        @foreach (var col in row)
+                        {
+                            <td>@col</td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>Error</p>
+    }
+</div>

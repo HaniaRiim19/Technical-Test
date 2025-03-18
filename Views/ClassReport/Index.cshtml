@@ -1,0 +1,25 @@
+@model IEnumerable<ClassReport>
+
+<h1>Class Registration Report</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Class</th>
+            <th>Teacher Name</th>
+            <th>Registrations</th>
+            <th>Number Paid</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var report in Model)
+        {
+            <tr>
+                <td>@report.Class</td>
+                <td>@report.TeacherName</td>
+                <td>@report.Registrations</td>
+                <td>@report.NumberPaid</td>
+            </tr>
+        }
+    </tbody>
+</table>
